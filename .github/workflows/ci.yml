@@ -15,7 +15,8 @@ jobs:
       env:
         TEST_NAME: Guillaume
       with:
-        version: 9.6
+        version: 9.6.11
+        php_extensions: "sqlite3 xml gd dom mbstring zip"
         bootstrap: vendor/autoload.php
         configuration: test/phpunit.xml
         args: --coverage-text
