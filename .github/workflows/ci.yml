@@ -1,0 +1,22 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: php-actions/composer@v6 # or alternative dependency management
+    - uses: php-actions/phpunit@v3
+    - name: PHPUnit Tests
+      uses: php-actions/phpunit@master
+      env:
+        TEST_NAME: Guillaume
+      with:
+        version: 9.6
+        bootstrap: vendor/autoload.php
+        configuration: test/phpunit.xml
+        args: --coverage-text
+        coverage_clover: "coverage/clover.xml"
