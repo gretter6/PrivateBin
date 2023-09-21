@@ -16,8 +16,9 @@ jobs:
         TEST_NAME: Guillaume
       with:
         version: 9.6.11
+        php_version: 8.2
         php_extensions: "sqlite3 xml gd dom mbstring zip"
         bootstrap: vendor/autoload.php
-        configuration: test/phpunit.xml
+        configuration: phpunit.xml
         args: --coverage-text
         coverage_clover: "coverage/clover.xml"
